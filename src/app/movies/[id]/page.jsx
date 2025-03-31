@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Star, Share, ChevronRight } from "lucide-react";
@@ -25,7 +26,7 @@ const movies = [
     certificate: "UA",
     trailerCount: 3,
     cast: [],
-    crew: []
+    crew: [],
   },
   {
     id: 2,
@@ -43,7 +44,7 @@ const movies = [
     certificate: "A",
     trailerCount: 2,
     cast: [],
-    crew: []
+    crew: [],
   },
 
   {
@@ -62,7 +63,7 @@ const movies = [
     certificate: "U",
     trailerCount: 2,
     cast: [],
-    crew: []
+    crew: [],
   },
   {
     id: 4,
@@ -80,7 +81,7 @@ const movies = [
     certificate: "UA",
     trailerCount: 3,
     cast: [],
-    crew: []
+    crew: [],
   },
   {
     id: 5,
@@ -98,7 +99,7 @@ const movies = [
     certificate: "U",
     trailerCount: 2,
     cast: [],
-    crew: []
+    crew: [],
   },
   {
     id: 6,
@@ -110,13 +111,14 @@ const movies = [
     genres: ["Action", "Comedy", "Superhero"],
     releaseDate: "26 Jul, 2025",
     duration: "2h 25m",
-    about: "Deadpool teams up with Wolverine in a hilarious and action-packed adventure...",
+    about:
+      "Deadpool teams up with Wolverine in a hilarious and action-packed adventure...",
     formats: ["2D", "IMAX", "3D"],
     languages: ["English"],
     certificate: "A",
     trailerCount: 3,
     cast: [],
-    crew: []
+    crew: [],
   },
   {
     id: 7,
@@ -128,21 +130,23 @@ const movies = [
     genres: ["Drama", "Thriller", "Musical"],
     releaseDate: "4 Oct, 2025",
     duration: "2h 30m",
-    about: "Joker returns in a dark and haunting musical psychological drama...",
+    about:
+      "Joker returns in a dark and haunting musical psychological drama...",
     formats: ["2D", "IMAX"],
     languages: ["English"],
     certificate: "A",
     trailerCount: 2,
     cast: [],
-    crew: []
-  }
+    crew: [],
+  },
 ];
 
 export default function MovieDetailsPage() {
   const { id } = useParams();
   const movie = movies.find((m) => m.id === Number(id));
 
-  if (!movie) return <div className="text-center py-10 text-white">Movie not found!</div>;
+  if (!movie)
+    return <div className="text-center py-10 text-white">Movie not found!</div>;
 
   return (
     <div>
@@ -150,7 +154,13 @@ export default function MovieDetailsPage() {
       <div className="relative bg-black">
         {/* Backdrop Image with Gradient Overlay */}
         <div className="absolute inset-0 opacity-30">
-          <Image src={movie.backdropUrl || "/placeholder.svg"} alt={movie.title} fill className="object-cover" priority />
+          <Image
+            src={movie.backdropUrl || "/placeholder.svg"}
+            alt={movie.title}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
 
@@ -161,19 +171,31 @@ export default function MovieDetailsPage() {
             <div className="md:w-1/4 lg:w-1/5">
               <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <div className="relative aspect-[2/3] w-full">
-                  <Image src={movie.posterUrl} alt={movie.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 300px" />
+                  <Image
+                    src={movie.posterUrl}
+                    alt={movie.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                  />
                   <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
-                    <div className="text-white text-sm font-medium">Trailers ({movie.trailerCount})</div>
+                    <div className="text-white text-sm font-medium">
+                      Trailers ({movie.trailerCount})
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="mt-2 text-center text-white text-sm">In cinemas</div>
+              <div className="mt-2 text-center text-white text-sm">
+                In cinemas
+              </div>
             </div>
 
             {/* Movie Details */}
             <div className="md:w-3/4 lg:w-4/5 text-white">
               <div className="flex justify-between items-start">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">{movie.title}</h1>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                  {movie.title}
+                </h1>
                 <button className="flex items-center gap-2 text-white/80 hover:text-white">
                   <Share className="w-5 h-5" />
                   <span className="hidden md:inline">Share</span>
@@ -196,10 +218,20 @@ export default function MovieDetailsPage() {
               {/* Format & Language */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {movie.formats.map((format) => (
-                  <span key={format} className="bg-white/20 px-3 py-1 rounded-md text-sm">{format}</span>
+                  <span
+                    key={format}
+                    className="bg-white/20 px-3 py-1 rounded-md text-sm"
+                  >
+                    {format}
+                  </span>
                 ))}
                 {movie.languages.map((language) => (
-                  <span key={language} className="bg-white/20 px-3 py-1 rounded-md text-sm">{language}</span>
+                  <span
+                    key={language}
+                    className="bg-white/20 px-3 py-1 rounded-md text-sm"
+                  >
+                    {language}
+                  </span>
                 ))}
               </div>
 
@@ -216,9 +248,11 @@ export default function MovieDetailsPage() {
 
               {/* Book Tickets Button */}
               <div className="mt-4">
-                <button className="bg-[#f84464] hover:bg-[#e23b5b] text-white font-bold py-3 px-8 rounded-md transition-colors">
-                  Book tickets
-                </button>
+                <Link href="/booking">
+                  <button className="bg-[#f84464] hover:bg-[#e23b5b] text-white font-bold py-3 px-8 rounded-md transition-colors">
+                    Book tickets
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
