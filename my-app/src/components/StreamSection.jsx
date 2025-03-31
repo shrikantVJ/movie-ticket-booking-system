@@ -40,14 +40,14 @@ export default function StreamSection() {
           <div className="md:w-1/2">
             <div className="relative w-full aspect-video">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/ticket.jpg"
                 alt="BookMyShow Stream"
                 fill
                 className="object-cover rounded-lg"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=100&width=300"
+                  src="/images/ticket-dada.png"
                   alt="BookMyShow Stream Logo"
                   width={200}
                   height={60}

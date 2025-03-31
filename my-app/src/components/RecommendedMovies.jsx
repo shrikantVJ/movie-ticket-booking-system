@@ -5,12 +5,13 @@ import Link from "next/link"
 import MovieCard from "./MovieCard"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
+
 // Sample movie data
 const recommendedMovies = [
   {
     id: 1,
     title: "Sikandar",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/sikandar.jpg",
     rating: "6.1",
     votes: "5.8K",
     genres: ["Action", "Drama"],
@@ -18,7 +19,7 @@ const recommendedMovies = [
   {
     id: 2,
     title: "L2: Empuraan",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/l2.jpg",
     rating: "8.1",
     votes: "64.8K",
     genres: ["Action", "Crime", "Thriller"],
@@ -26,7 +27,7 @@ const recommendedMovies = [
   {
     id: 3,
     title: "Chhaava",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/Chhaava.jpg",
     rating: "9.2",
     votes: "332K",
     genres: ["Action", "Drama", "Historical"],
@@ -34,7 +35,7 @@ const recommendedMovies = [
   {
     id: 4,
     title: "The Diplomat",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/diplomat.jpg",
     rating: "8.8",
     votes: "20.2K",
     genres: ["Action", "Thriller"],
@@ -42,7 +43,7 @@ const recommendedMovies = [
   {
     id: 5,
     title: "Snow White",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/snow-white.jpg",
     rating: "7.0",
     votes: "1.6K",
     genres: ["Adventure", "Drama", "Family", "Musical"],
@@ -50,7 +51,7 @@ const recommendedMovies = [
   {
     id: 6,
     title: "Deadpool & Wolverine",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/image3.jpeg",
     rating: "8.5",
     votes: "120K",
     genres: ["Action", "Comedy", "Superhero"],
@@ -58,7 +59,7 @@ const recommendedMovies = [
   {
     id: 7,
     title: "Joker: Folie à Deux",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/joker1.jpg",
     rating: "7.8",
     votes: "45K",
     genres: ["Crime", "Drama", "Thriller"],
@@ -99,6 +100,7 @@ export default function RecommendedMovies() {
   return (
     <section className="mb-12">
       <div className="flex items-center justify-between mb-4">
+        
         <h2 className="text-xl font-bold text-gray-900">Recommended Movies</h2>
         <Link href="/movies" className="text-[#f84464] text-sm font-medium hover:underline">
           See All

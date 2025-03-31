@@ -10,7 +10,7 @@ const comingSoonMovies = [
   {
     id: 1,
     title: "Sikandar",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/sikandar.jpg",
     releaseDate: "May 15, 2024",
     genres: ["Action", "Drama"],
   },

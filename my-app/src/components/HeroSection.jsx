@@ -8,19 +8,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const carouselItems = [
   {
     id: 1,
-    imageUrl: "/placeholder.svg?height=400&width=1200",
+    imageUrl: "/images/1382563.jpg",
     title: "Deadpool & Wolverine",
     link: "/movies/deadpool-wolverine",
   },
   {
     id: 2,
-    imageUrl: "/placeholder.svg?height=400&width=1200",
+    imageUrl: "/images/maxresdefault.jpg",
     title: "Joker: Folie à Deux",
     link: "/movies/joker-2",
   },
   {
     id: 3,
-    imageUrl: "/placeholder.svg?height=400&width=1200",
+    imageUrl: "/images/wp14473267.jpg",
     title: "Venom 3",
     link: "/movies/venom-3",
   },

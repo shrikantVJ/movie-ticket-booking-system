@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -10,7 +8,7 @@ export default function MovieCard({ movie }) {
 
   return (
     <div className="relative group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <Link href={`/pages/movie/${movie.id}`}>
+      <Link href={`/movies/${movie.id}`}>
         <div className="overflow-hidden rounded-lg shadow-md transition-all duration-300 transform group-hover:shadow-xl group-hover:scale-[1.02]">
           <div className="relative aspect-[2/3] w-full">
             <Image
@@ -35,12 +33,6 @@ export default function MovieCard({ movie }) {
           <p className="text-sm text-gray-600">{movie.genres.join("/")}</p>
         </div>
       </Link>
-      {isHovered && (
-        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded shadow-lg z-10 w-48 text-center animate-fadeIn">
-          <p className="text-sm font-medium">Click to book tickets</p>
-        </div>
-      )}
     </div>
   )
 }
-

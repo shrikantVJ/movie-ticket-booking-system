@@ -14,7 +14,7 @@ const banners = [
   },
   {
     id: 2,
-    imageUrl: "/placeholder.svg?height=300&width=1200",
+    imageUrl: "/images/sikandar.jpg",
     title: "Sikandar - Coming Soon",
     link: "/movies/sikandar",
   },

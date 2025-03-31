@@ -10,7 +10,7 @@ const movies = [
   {
     id: 1,
     title: "Sikandar",
-    posterUrl: "/placeholder.svg?height=450&width=300",
+    posterUrl: "/images/sikandar.jpg",
     rating: "6.1",
     votes: "5.8K",
     certificate: "UA",
