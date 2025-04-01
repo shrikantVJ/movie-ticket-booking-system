@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, ChevronRight, Plus, Minus, Heart, Info } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   const [selectedDate, setSelectedDate] = useState(0);
   const [selectedTheater, setSelectedTheater] = useState(null);
   
@@ -33,6 +35,10 @@ export default function Home() {
       amenities: ["M-Ticket"]
     }
   ];
+
+  const handleShowSelection = (theater, show) => {
+    router.push('/seats');
+  };
 
   return (
     <main className="min-h-screen bg-[#f5f5f5]">
@@ -127,7 +133,7 @@ export default function Home() {
                 <div key={i} className="text-center">
                   <button 
                     className="px-6 py-2 border-2 rounded hover:border-green-500 hover:text-green-500 transition-all duration-300"
-                    onClick={() => setSelectedTheater(theater.name)}
+                    onClick={() => handleShowSelection(theater, show)}
                   >
                     <div className="font-semibold">{show.time}</div>
                     <div className="text-xs text-gray-500">{show.type}</div>
