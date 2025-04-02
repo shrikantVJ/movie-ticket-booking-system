@@ -4,12 +4,30 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, ChevronDown, Menu, X } from "lucide-react";
 import SignInPopup from "@/components/ui/SignInPopup";
+import { gapi } from "gapi-script";
+
+const clientId = "255151939242-cecntcovovrd7b1us9s2o3p5ic0tquhu.apps.googleusercontent.com"
+
+
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [location, setLocation] = useState("Mumbai");
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId, clientId,
+        scope: "",
+      })
+    };
+
+    gapi.load("client:auth2", start);
+  });
+
 
   useEffect(() => {
     const handleScroll = () => {
