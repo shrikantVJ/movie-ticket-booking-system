@@ -50,7 +50,7 @@ export default function SignInPopup({ isOpen, onClose }) {
                 whileTap={{ scale: 0.98 }}
               >
                 <img
-                  src="/images/google-icon.png" // Replace with actual path
+                  src="/images/pngimg.com - google_PNG19635.png" // Replace with actual path
                   alt="Google Icon"
                   className="w-6 h-6"
                 />
