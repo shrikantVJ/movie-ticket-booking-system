@@ -50,8 +50,8 @@ const movies = [
   {
     id: 3,
     title: "Chhaava",
-    posterUrl: "/images/chhaava.jpg",
-    backdropUrl: "/images/chhaava-bg.jpg",
+    posterUrl: "/images/Chhaava.jpg",
+    backdropUrl: "/images/Chhaava.jpg",
     rating: "7.5",
     votes: "12.3K",
     genres: ["Historical", "Drama"],
